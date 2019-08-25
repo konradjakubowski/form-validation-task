@@ -1,0 +1,52 @@
+{
+  "name": "newtask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html && npm run test:js",
+    "test:html": "glob-run nu-html-checker *.html",
+    "test:js": "jshint",
+    "init-project": "npm run init:dirs && npm run init:files && npm run init:gitignore && npm run init:npm-install",
+    "init:dirs": "mkdir -p sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "init:npm-install": "npm install",
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:clean": "rm -rf",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:sass:dev": "node-sass --output-style expanded --source-map true -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "babel": "babel --presets es2015 js/script.js -o ./script-compiled.js",
+    "http": "http-server",
+    "sass": "node-sass --output-style=expanded --source-map=true sass/style.scss css/style.css --watch",
+    "prefix": "postcss css/style.css --use=autoprefixer --map=false --output=css/style-autoprefixed.css",
+    "sync": "browser-sync start --server --files='./*.html,./*.css'",
+    "dev": "npm run sass && npm run prefix"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "glob-run": "^0.1.6",
+    "node-sass": "^4.12.0",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^3.3.0",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.26.7",
+    "http-server": "^0.11.1",
+    "jshint": "^2.9.5",
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^6.1.3"
+  }
+}

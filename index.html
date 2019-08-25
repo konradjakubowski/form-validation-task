@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Form Validator Task</title>
+	<meta content="Form Validator Task" name="description">
+	<meta content="website bootstrap framework html css sass javascript js scripts form validation" name="keywords">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav class="navbar--section stroke">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+						<a href="#"><img class="navbar--section__logo" alt="company-logo" src="http://dankayart.com/wp-content/uploads/2016/06/flat-LOGO.png"></a>
+					</div>
+					<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+						<ul class="navbar--list">
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">Home</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">About</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">Expertise</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">Team</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">Works</a>
+							</li>
+							<li class="navbar__item">
+								<a href="#" class="navbar__link">About us</a>
+							</li>
+							<li class="navbar__item ">
+								<a href="#" class="navbar__link active">Register</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</nav>	
+	<section class="form--section">
+	<h1 class="form--section__header">REGISTRATION FORM</h1>           
+		<form onsubmit="return validate()" method="post" class="form--section__main" name="Form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+				    <div class="flex-container">
+				    	<div class="flex-item-1">
+				    		<p>Name:</p>
+				    	</div>
+				    	<div class="flex-item-2">
+				    		<input class="form-control" type="text" size=65 name="Name" placeholder="ex. John Doe"> 
+				    	</div>
+				    </div> 
+					<div class="flex-container">
+				    	<div class="flex-item-1">
+				    		<p>Address:</p>
+				    	</div>
+				    	<div class="flex-item-2">
+				    		<input class="form-control" type="text" size=65 name="Address">
+				    	</div>
+				    </div> 
+					<div class="flex-container">
+				    	<div class="flex-item-1">
+				    		<p>E-mail:</p>
+				    	</div>
+				    	<div class="flex-item-2">
+				    		<input class="form-control" type="email" size=65 name="EMail" placeholder="example@yahoo.com">
+				    	</div>
+				    </div> 
+				    <div class="flex-container">
+				    	<div class="flex-item-1">
+				    		<p>Password:</p>
+				    	</div>
+				    	<div class="flex-item-2">
+				    		<input class="form-control" id="pass" type="password" size=65 name="Password" placeholder="maximum characters: 10">
+				    	</div>
+				    </div> 
+				    <div class="flex-container">
+				    	<div class="flex-item-1">
+				    		<p>Telephone:</p>
+				    	</div>
+				    	<div class="flex-item-2">
+				    		<input class="form-control" id="tel" type=tel size=65 name="Telephone" placeholder="500-452-504" pattern='[0-9]{3}-[0-9]{3}-[0-9]{3}'>
+				    	</div>
+				    </div>
+				    <div class="checkbox--wrapper"> 
+				    	<input type="checkbox" name="terms" value="I agree for the Terms and Conditions" required> I agree for the <a href="#">Terms and Conditions.</a><br>
+		  				<input type="checkbox" name="marketing" value="I want to receive marketing information"> I want to receive marketing information.<br>
+		  			</div>		
+  			   
+		    <input class="btn btn--submit" type="submit" value="Send" name="Submit">
+		    <input class="btn btn--submit" type="reset" value="Clear" name="Clear">  
+		</form> 
+	</section>	
+	<section class="footer--section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="footer--background col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="footer--inside">
+						<div class="footer--first__item col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<img class="footer__logo" alt="company-logo" src="http://dankayart.com/wp-content/uploads/2016/06/flat-LOGO.png">
+							<p class="footer--inside__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, voluptate culpa porro. Esse laborum qui necessitatibus velit laboriosam blanditiis fugiat ad, alias, ea adipisci. Reiciendis voluptatum.</p>
+							<div class="container-fluid footer__bottom">
+								<div class="row">
+									<div class="col-lg-3">
+										<p class="footer__text margin-reset text-left">
+											<a href="#" class="footer__link" target="_blank">HELP</a>
+										</p>
+									</div>
+									<div class="col-lg-6">
+										<p class="footer__text margin-reset">
+											<a href="#" class="footer__link" target="_blank">TERMS AND OTHER</a>
+										</p>
+									</div>
+									<div class="col-lg-3">
+										<p class="footer__text margin-reset text-right">
+											<a href="#" class="footer__link" target="_blank">PRIVACY</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer--second__item col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<h4 class="footer__header">OUR STUDIO</h4>
+							<p><i aria-hidden="true" class="fa fa-map-marker"></i>619 Big Rock Cove Road Oxford, MS 38655. United States of America.</p>
+							<p><i aria-hidden="true" class="fa fa-phone"></i>(+62) 435-788-9212</p>
+						</div>
+						<div class="footer--third__item col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<h4 class="footer__header">STAY IN TOUCH</h4>
+							<div class="footer--newsletter">
+								<div class="input-group">
+									<input class="form-control" placeholder="Subscribe to our newsletter" type="email"> 
+									<span class="input-group-btn">
+									<button class="btn btn-theme" type="submit">
+									<i aria-hidden="true" class="fa fa-paper-plane-o"></i>
+									</button>
+									</span>
+								</div>
+								<div class="container-fluid">
+									<div class="row">
+										<button class="col-lg-2 col-xs-4 social btn-fb"><i aria-hidden="true" class="fa fa-facebook"></i></button> <button class="col-lg-2 col-xs-4 social btn-twitter"><i aria-hidden="true" class="fa fa-twitter"></i></button> <button class="col-lg-2 col-xs-4 social btn-git"><i aria-hidden="true" class="fa fa-github"></i></button> <button class="col-lg-2 col-xs-4 social btn-instagram"><i aria-hidden="true" class="fa fa-instagram"></i></button> <button class="col-lg-2 col-xs-4 social btn-gplus"><i aria-hidden="true" class="fa fa-google-plus"></i></button> <button class="col-lg-2 col-xs-4 social btn-youtube"><i aria-hidden="true" class="fa fa-youtube-play"></i></button>
+									</div>
+								</div>
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<p class="text-right footer__copyright">Copyright &copy; - Tajem Creative<br>
+											Used for atask project of Konrad Jakubowski</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="./script-compiled.js" type="text/javascript"></script>
+</body>
+</html>
